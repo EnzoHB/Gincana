@@ -7,7 +7,7 @@
         points: 75,
     },
     {
-        name: 'Feij„o',
+        name: 'Feij√£o',
         price: 6,
         amount: 1,
         points: 15,
@@ -19,13 +19,13 @@
         points: 10,
     },
     {
-        name: '”leo',
+        name: '√ìleo',
         price: 8,
         amount: 1,
         points: 10,
     },
     {
-        name: 'Macarr„o',
+        name: 'Macarr√£o',
         price: 8,
         amount: 2,
         points: 10,
@@ -98,10 +98,10 @@ function proportion(it, equals) {
 	
 </script>
 
-<h1>Visualizar InformaÁıes</h1>
+<h1>Visualizar Informa√ß√µeses</h1>
 <select bind:value={type} on:change={handleInput}>
-	<option value=default>Padr„o</option>
-	<option value=price>PreÁo</option>
+	<option value=default>Padr√£o</option>
+	<option value=price>Pre√ßo</option>
 	<option value=amount>Quantidade</option>
 	<option value=points>Pontos</option>
 </select>
@@ -110,7 +110,7 @@ function proportion(it, equals) {
 <table>
 	<tr>
 		<th>Nome</th>
-		<th>PreÁo</th>
+		<th>Pre√ßo</th>
 		<th>Quantidade </th>
 		<th>Pontos</th>
 	</tr>
