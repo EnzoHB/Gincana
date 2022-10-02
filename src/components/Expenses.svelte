@@ -1,34 +1,14 @@
 <script>
 
+    import { database } from '../data.js'
+    
     // Crowd Funding control
-    let data = [
-        { 
-            store: 'Requetelo',
-            item: 'Bandeira',
-            price: 100,
-            amount: 1,
-        },
-        { 
-            store: 'Santa Helena',
-            item: 'Cano PVC',
-            price: 10,
-            amount: 1,
-        },
-        {
-            store: 'Usadão Bady',
-            item: 'Garrafas Pets',
-            price: 0.3,
-            amount: 80,
-        },
-        {
-            store: 'Centro de Reciclagem',
-            item: 'Lacres',
-            price: 5,
-            amount: 40
-        },
-    ];
 
-    let table = data;
+    let data;
+    let table;
+
+    database.subscribe(value => data = table = value.expenses);
+
     let total = table.reduce((acc, item) => acc += item.price * item.amount, 0);
 
 </script>
@@ -36,6 +16,7 @@
 
 <div>
 <h1> Gastos </h1>
+<p>Recibo de todos os gastos ( Não necessariamente realizados )</p>
 <p>Total: {total.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</p>
 <table>
 	<tr>

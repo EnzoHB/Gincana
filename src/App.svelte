@@ -1,7 +1,7 @@
 <script>
-    import Price from "./Price.svelte";
-    import Expenses from "./Expenses.svelte";
-    import CFC from "./CFC.svelte";
+    import Price from "./components/Price.svelte";
+    import Expenses from "./components/Expenses.svelte";
+    import CFC from "./components/CFC.svelte";
 </script>
 
 <Price/>

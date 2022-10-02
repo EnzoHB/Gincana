@@ -5,3 +5,7 @@ var app = new App({
 });
 
 export default app;
+
+// npm i 
+// npm run dev -- Starts the live reload
+// npm run deploy 
