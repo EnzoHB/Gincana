@@ -62,7 +62,7 @@ const data = {
             store: 'Centro de Reciclagem',
             item: 'Lacres',
             price: 5,
-            amount: 40
+            amount: 30
         },
     ],
     donators: [
@@ -92,7 +92,7 @@ const data = {
         { name: 'EDUARDO 9° ANO', donation: 0 },
         { name: 'GIOVANNA 9° ANO', donation: 0 },
         { name: 'GUILHERME 9º ANO', donation: 0 },
-        { name: 'ENZO 1° MÉDIO', donation: 130 },
+        { name: 'ENZO 1° MÉDIO', donation: 80 },
         { name: 'MATHEUS 1° MÉDIO', donation: 0 }
     ]
 };
