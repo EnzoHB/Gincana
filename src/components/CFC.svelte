@@ -17,7 +17,7 @@
     let revenue = revenueTable.reduce((acc, item) => acc += item.donation, 0 )
     let expenses = expensesTable.reduce((acc, item) => acc += item.price * item.amount, 0);
 
-    let remaining = revenue - expenses;
+    let used = expenses / revenueTable.length;
 </script>
 
 <div>
@@ -36,7 +36,7 @@
                 <td>{name}</td>
                 <td>{donation.toLocaleString('pt-br', options)}</td>
                 <td>{(donation * 100 / revenue).toFixed(2) }%</td>
-                <td>{(donation / revenue * remaining).toLocaleString('pt-br', options)}</td>
+                <td>{(donation - used).toLocaleString('pt-br', options)}</td>
             </tr>
         {/each}
     </table>
