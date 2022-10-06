@@ -1,4 +1,4 @@
-import { readable } from "svelte/store";
+import { readable, writable } from "svelte/store";
 
 const data = {
     comparisons: [
@@ -34,7 +34,7 @@ const data = {
         },
         {
             name: 'Lacre',
-            price: 150,
+            price: 100,
             amount: 20,
             points: 3400,
         }
@@ -49,7 +49,7 @@ const data = {
         { 
             store: 'Santa Helena',
             item: 'Cano PVC',
-            price: 10,
+            price: 12,
             amount: 1,
         },
         {
@@ -64,36 +64,48 @@ const data = {
             price: 5,
             amount: 30
         },
+        {
+            store: 'Tema Print',
+            item: 'Posters',
+            price: 23,
+            amount: 2
+        },
+        {
+            store: 'Papelaria Central',
+            item: 'Bilhetes',
+            price: 18,
+            amount: 1
+        },
     ],
     donators: [
         { name: 'MARIA NÍVEA 6° ANO', donation: 0 },
-        { name: 'MATHEUS 6° ANO', donation: 0 },
+        { name: 'MATHEUS 6° ANO', donation: 15 },
         { name: 'MIGUEL 6° ANO', donation: 0 },
         { name: 'RAFAEL 6º ANO', donation: 0 },
         { name: 'VALENTINA 6° ANO', donation: 0 },
-        { name: 'ISABELLE 6° ANO', donation: 0 },
+        { name: 'ISABELLE 6° ANO', donation: 20 },
         { name: 'AGATHA 7° ANO', donation: 0 },
         { name: 'BETHINA 7º ANO', donation: 0 },
         { name: 'ENZO 7° ANO', donation: 20 },
-        { name: 'FELIPE 7º ANO', donation: 0 },
-        { name: 'GABRIELLA 7° ANO', donation: 0 },
+        { name: 'FELIPE 7º ANO', donation: 20 },
+        { name: 'GABRIELLA 7° ANO', donation: 20 },
         { name: 'JOÃO MATEUS 7° ANO', donation: 30 },
         { name: 'WARLLEY 7° ANO', donation: 0 },
-        { name: 'LUCAS 8º ANO', donation: 0 },
-        { name: 'LUÍS FELIPE 8º ANO', donation: 0 },
+        { name: 'LUCAS 8º ANO', donation: 20 },
+        { name: 'LUÍS FELIPE 8º ANO', donation: 20 },
         { name: 'LUIZA 8° ANO', donation: 0 },
         { name: 'MARIA CLARA 8° ANO', donation: 20 },
         { name: 'MARIA FERNANDA 8° ANO', donation: 50 },
         { name: 'MARIANA 8° ANO', donation: 20 },
-        { name: 'MATHEUS 8° ANO', donation: 0 },
-        { name: 'THÉO 8° ANO', donation: 0 },
+        { name: 'MATHEUS 8° ANO', donation: 20 },
+        { name: 'THÉO 8° ANO', donation: 20 },
         { name: 'ANGELINA 9° ANO', donation: 0 },
         { name: 'DANITCHELE 9° ANO', donation: 20 },
-        { name: 'EDUARDO 9° ANO', donation: 0 },
+        { name: 'EDUARDO 9° ANO', donation: 20 },
         { name: 'GIOVANNA 9° ANO', donation: 0 },
-        { name: 'GUILHERME 9º ANO', donation: 0 },
+        { name: 'GUILHERME 9º ANO', donation: 20 },
         { name: 'ENZO 1° MÉDIO', donation: 80 },
-        { name: 'MATHEUS 1° MÉDIO', donation: 0 }
+        { name: 'MATHEUS 1° MÉDIO', donation: 50 }
     ]
 };
 

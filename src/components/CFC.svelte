@@ -2,10 +2,12 @@
 
     import { database } from '../data.js';
 
+    let donators;
     let revenueTable;
     let expensesTable;
 
     database.subscribe(value => {
+        donators = value.donators
         revenueTable = value.donators;
         expensesTable = value.expenses;
     });
@@ -14,10 +16,18 @@
 
     $: revenueTable.sort((a, b) => b.donation - a.donation);
 
+    let overdebt = donators.filter(member => member.donation > 20).reduce((acc, member) => acc += member.donation - 20, 0);
+
     let revenue = revenueTable.reduce((acc, item) => acc += item.donation, 0 )
     let expenses = expensesTable.reduce((acc, item) => acc += item.price * item.amount, 0);
 
-    let used = expenses / revenueTable.length;
+    expenses += overdebt;
+
+    let used = expenses / revenueTable.length; 
+
+	function pricify(x) {
+        return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
+    };
 </script>
 
 <div>

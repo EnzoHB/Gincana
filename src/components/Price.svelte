@@ -4,8 +4,12 @@
 
     let data;
     let table;
+    let donators;
 
-    database.subscribe(value => data = table = value.comparisons)
+    database.subscribe(value => {
+        data = table = value.comparisons
+        donators = value.donators;
+    })
 	
     let type = 'default';
     let value = 0;
