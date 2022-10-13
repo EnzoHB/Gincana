@@ -61,9 +61,9 @@ const data = [
         amount: 2
     },
     {
-        store: 'Conveniência',
-        item: 'Saco de lixo',
-        price: 3.75,
+        store: 'Cacau Show',
+        item: 'Cesta da Rifa',
+        price: 60,
         amount: 1
     },
 ];

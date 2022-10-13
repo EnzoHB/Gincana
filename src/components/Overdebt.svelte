@@ -1,25 +1,5 @@
 <script>
 
-    /*
-    import { database } from '../data.js'
-
-    let expenses;
-    let donators;
-
-    database.subscribe(data => {
-        expenses = data.expenses;
-        donators = data.donators;
-    });
-
-    let over = donators.filter(member => member.donation > 20).sort((a, b) => b.donation - a.donation)
-    let total = over.reduce((acc, member) => acc += member.donation - 20, 0);
-    
-    function pricify(x) {
-        return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
-    };
-
-    */
-
     import { pricify } from '../util/pricify.js';
     import { donators } from '../data/donators.js';
     import { expenses } from '../data/expenses.js';

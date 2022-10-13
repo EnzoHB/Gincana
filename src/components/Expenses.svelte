@@ -1,31 +1,5 @@
 <script>
 
-	/*
-
-    import { database } from '../data.js'
-	import { expenses } from '../data/expenses.js';
-    
-    // Crowd Funding control
-
-	let data;
-    let table;
-
-	let donators;
-
-    database.subscribe(value => {
-		data = table = value.expenses;
-		donators = value.donators;
-	});
-
-	let overdebt = donators.filter(member => member.donation > 20).reduce((acc, member) => acc += member.donation - 20, 0); 
-    let total = table.reduce((acc, item) => acc += item.price * item.amount, 0);
-
-	function pricify(x) {
-        return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
-    };
-
-	*/
-
 	import { pricify } from '../util/pricify.js';
     import { expenses } from '../data/expenses.js';
 
@@ -44,8 +18,8 @@
 
 
 <div>
-<h1> Gastos </h1>
-<p>Recibo de todos os gastos ( Não necessariamente realizados )</p>
+<h1>Gastos</h1>
+<p>Recibo de todos os gastos</p>
 <p>Total: { pricify(total) }</p>
 <table>
 	<tr>

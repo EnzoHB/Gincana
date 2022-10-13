@@ -1,15 +1,14 @@
 <script>
 
-    import { database } from '../data.js';
+    import { pricify } from '../util/pricify.js';
+    import { comparisons } from '../data/comparisons.js';
 
     let data;
     let table;
-    let donators;
 
-    database.subscribe(value => {
-        data = table = value.comparisons
-        donators = value.donators;
-    })
+    comparisons.subscribe(comp => {
+        data = table = comp
+    });
 	
     let type = 'default';
     let value = 0;
@@ -68,34 +67,6 @@
         return that => that * equals / it;
     };
 
-    /*
-
-    import { comparisons } from '../data/comparisons.js';
-
-    let defaultTable;
-    let dynamicTable;
-
-    comparisons.subscribe(data => {
-        defaultTable = data;
-        dynamicTable = data;
-    })
-
-    let type;
-    let value;
-
-    function handleInput() {
-
-        if (type == 'default') 
-            return dynamicTable = defaultTable;
-
-        if (value == 0 || value == null) 
-            return dynamicTable = defaultTable;
-
-        dynamicTable = queryData(type, value);
-    };
-
-    */
-
 </script>
 
 <div>
@@ -121,7 +92,7 @@
     	{#each table as { name, price, amount, points }}
     		<tr>
     			<td>{name}</td>
-    			<td>R${price},00</td>
+    			<td>{ pricify(price) }</td>
     			<td>{amount}</td>
     			<td>{points}</td>
     		</tr>

@@ -2,9 +2,9 @@ import { writable } from 'svelte/store';
 const data = [
 	  	{
             name: 'Lacre',
-            price: 100,
-            amount: 20,
-            points: 3400,
+            price: 150,
+            amount: 30,
+            points: 6200,
         },
         {
             name: 'Arroz',
