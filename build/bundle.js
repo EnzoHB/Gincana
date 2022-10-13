@@ -2030,7 +2030,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (80:4) {#each dynamic as { id, height, box }}
+    // (81:4) {#each dynamic as { id, height, box }}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -2038,14 +2038,18 @@ var app = (function () {
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*height*/ ctx[9] + "";
+    	let t2_value = (/*height*/ ctx[9] * 10).toString(16).padStart(3, '0') + "";
     	let t2;
     	let t3;
-    	let t4;
     	let td2;
-    	let t5_value = /*box*/ ctx[10] + "";
+    	let t4_value = /*height*/ ctx[9] + "";
+    	let t4;
     	let t5;
     	let t6;
+    	let td3;
+    	let t7_value = /*box*/ ctx[10] + "";
+    	let t7;
+    	let t8;
 
     	const block = {
     		c: function create() {
@@ -2055,18 +2059,23 @@ var app = (function () {
     			t1 = space();
     			td1 = element("td");
     			t2 = text(t2_value);
-    			t3 = text(" cm");
-    			t4 = space();
+    			t3 = space();
     			td2 = element("td");
-    			t5 = text(t5_value);
+    			t4 = text(t4_value);
+    			t5 = text(" cm");
     			t6 = space();
+    			td3 = element("td");
+    			t7 = text(t7_value);
+    			t8 = space();
     			attr_dev(td0, "class", "svelte-15zvcps");
-    			add_location(td0, file, 81, 12, 2384);
+    			add_location(td0, file, 82, 12, 2407);
     			attr_dev(td1, "class", "svelte-15zvcps");
-    			add_location(td1, file, 82, 12, 2411);
+    			add_location(td1, file, 83, 12, 2434);
     			attr_dev(td2, "class", "svelte-15zvcps");
-    			add_location(td2, file, 83, 12, 2445);
-    			add_location(tr, file, 80, 8, 2366);
+    			add_location(td2, file, 84, 12, 2502);
+    			attr_dev(td3, "class", "svelte-15zvcps");
+    			add_location(td3, file, 85, 12, 2536);
+    			add_location(tr, file, 81, 8, 2389);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -2075,16 +2084,20 @@ var app = (function () {
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
-    			append_dev(td1, t3);
-    			append_dev(tr, t4);
+    			append_dev(tr, t3);
     			append_dev(tr, td2);
+    			append_dev(td2, t4);
     			append_dev(td2, t5);
     			append_dev(tr, t6);
+    			append_dev(tr, td3);
+    			append_dev(td3, t7);
+    			append_dev(tr, t8);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*dynamic*/ 1 && t0_value !== (t0_value = /*id*/ ctx[8] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*dynamic*/ 1 && t2_value !== (t2_value = /*height*/ ctx[9] + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*dynamic*/ 1 && t5_value !== (t5_value = /*box*/ ctx[10] + "")) set_data_dev(t5, t5_value);
+    			if (dirty & /*dynamic*/ 1 && t2_value !== (t2_value = (/*height*/ ctx[9] * 10).toString(16).padStart(3, '0') + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*dynamic*/ 1 && t4_value !== (t4_value = /*height*/ ctx[9] + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*dynamic*/ 1 && t7_value !== (t7_value = /*box*/ ctx[10] + "")) set_data_dev(t7, t7_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -2095,7 +2108,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(80:4) {#each dynamic as { id, height, box }}",
+    		source: "(81:4) {#each dynamic as { id, height, box }}",
     		ctx
     	});
 
@@ -2147,6 +2160,8 @@ var app = (function () {
     	let t57;
     	let th2;
     	let t59;
+    	let th3;
+    	let t61;
     	let each_value = /*dynamic*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -2215,11 +2230,14 @@ var app = (function () {
     			th0.textContent = "ID";
     			t55 = space();
     			th1 = element("th");
-    			th1.textContent = "Altura";
+    			th1.textContent = "Code";
     			t57 = space();
     			th2 = element("th");
-    			th2.textContent = "Caixa";
+    			th2.textContent = "Altura";
     			t59 = space();
+    			th3 = element("th");
+    			th3.textContent = "Caixa";
+    			t61 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -2247,9 +2265,11 @@ var app = (function () {
     			attr_dev(th0, "class", "svelte-15zvcps");
     			add_location(th0, file, 75, 8, 2256);
     			attr_dev(th1, "class", "svelte-15zvcps");
-    			add_location(th1, file, 76, 2, 2271);
+    			add_location(th1, file, 76, 8, 2277);
     			attr_dev(th2, "class", "svelte-15zvcps");
-    			add_location(th2, file, 77, 2, 2290);
+    			add_location(th2, file, 77, 2, 2294);
+    			attr_dev(th3, "class", "svelte-15zvcps");
+    			add_location(th3, file, 78, 2, 2313);
     			add_location(tr, file, 74, 4, 2242);
     			attr_dev(table_1, "class", "svelte-15zvcps");
     			add_location(table_1, file, 73, 0, 2229);
@@ -2302,7 +2322,9 @@ var app = (function () {
     			append_dev(tr, th1);
     			append_dev(tr, t57);
     			append_dev(tr, th2);
-    			append_dev(table_1, t59);
+    			append_dev(tr, t59);
+    			append_dev(tr, th3);
+    			append_dev(table_1, t61);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(table_1, null);
