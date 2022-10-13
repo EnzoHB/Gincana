@@ -7,6 +7,10 @@ class Population extends Array {
         return !this.even;
     };
 
+    get sum() {
+        return Population.sum(...this);
+    };
+
     get avarage() {
         return Population.avarage(...this);
     };
@@ -53,6 +57,10 @@ class Population extends Array {
 
     static avarage(...elements) {
         return elements.reduce((a, b) => a + b) / elements.length;
+    };
+
+    static sum(...elements) {
+        return elements.reduce((a, b) => a + b);
     };
 };
 
