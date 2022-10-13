@@ -67,7 +67,35 @@
     function proportion(it, equals) {
         return that => that * equals / it;
     };
-    
+
+    /*
+
+    import { comparisons } from '../data/comparisons.js';
+
+    let defaultTable;
+    let dynamicTable;
+
+    comparisons.subscribe(data => {
+        defaultTable = data;
+        dynamicTable = data;
+    })
+
+    let type;
+    let value;
+
+    function handleInput() {
+
+        if (type == 'default') 
+            return dynamicTable = defaultTable;
+
+        if (value == 0 || value == null) 
+            return dynamicTable = defaultTable;
+
+        dynamicTable = queryData(type, value);
+    };
+
+    */
+
 </script>
 
 <div>

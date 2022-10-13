@@ -1,5 +1,6 @@
 <script>
 
+    /*
     import { database } from '../data.js'
 
     let expenses;
@@ -16,6 +17,34 @@
     function pricify(x) {
         return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
     };
+
+    */
+
+    import { pricify } from '../util/pricify.js';
+    import { donators } from '../data/donators.js';
+    import { expenses } from '../data/expenses.js';
+
+    let over;
+
+    $: total = over.reduce((acc, donator) => acc += donator.donation - 20, 0)
+    $: expenses.update(data => {
+
+        data.push({
+            store: 'Gincana',
+            item: 'Overdebt',
+            price: total,
+            amount: 1,
+        });
+
+        return data;
+    });
+
+    donators.subscribe(data => {
+        over = data
+            .filter(donator => donator.donation > 20)
+            .sort((a, b) => b.donation - a.donation)
+        }
+    );
 
 </script>
 

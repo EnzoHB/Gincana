@@ -1,6 +1,9 @@
 <script>
 
+	/*
+
     import { database } from '../data.js'
+	import { expenses } from '../data/expenses.js';
     
     // Crowd Funding control
 
@@ -21,13 +24,29 @@
         return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
     };
 
+	*/
+
+	import { pricify } from '../util/pricify.js';
+    import { expenses } from '../data/expenses.js';
+
+	let table;
+
+	$: total = table.reduce((acc, purchase) => acc += 
+		purchase.price * 
+		purchase.amount, 0
+	);
+
+	expenses.subscribe(data => {
+		table = data;
+	});
+
 </script>
 
 
 <div>
 <h1> Gastos </h1>
 <p>Recibo de todos os gastos ( Não necessariamente realizados )</p>
-<p>Total: {(total + overdebt).toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</p>
+<p>Total: { pricify(total) }</p>
 <table>
 	<tr>
         <th>Item</th>
@@ -35,20 +54,14 @@
 		<th>Quantidade</th>
         <th>Total</th>
 	</tr>
-	{#each table as { store, item,  price, amount }}
+	{#each table as { item, price, amount }}
 		<tr>
 			<td>{item}</td>
-			<td>{price.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</td>
+			<td>{ pricify(price) }</td>
 			<td>{amount}</td>
-            <td>R${price * amount},00</td>
+            <td>{ pricify(price * amount) }</td>
 		</tr>
 	{/each}
-	<tr>
-		<td>Overdebt</td>
-		<td>{pricify(overdebt)}</td>
-		<td>{1}</td>
-		<td>{pricify(overdebt)}</td>
-	</tr>
 </table>
 </div>
 

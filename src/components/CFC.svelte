@@ -6,6 +6,13 @@
     let revenueTable;
     let expensesTable;
 
+    import { donators } from '../data/donators.js';
+    import { expenses } from '../data/expenses.js';
+
+    donators.subscribe(data => {
+        donators
+    })
+
     database.subscribe(value => {
         donators = value.donators
         revenueTable = value.donators;
