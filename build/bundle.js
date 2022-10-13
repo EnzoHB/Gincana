@@ -1,2 +1,2573 @@
-var app=function(){"use strict";function t(){}function e(t){return t()}function n(){return Object.create(null)}function o(t){t.forEach(e)}function s(t){return"function"==typeof t}function r(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function c(t,e){t.appendChild(e)}function a(t,e,n){t.insertBefore(e,n||null)}function i(t){t.parentNode.removeChild(t)}function l(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}function u(t){return document.createElement(t)}function d(t){return document.createTextNode(t)}function p(){return d(" ")}function m(t,e,n,o){return t.addEventListener(e,n,o),()=>t.removeEventListener(e,n,o)}function f(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function h(t){return""===t?null:+t}function v(t,e){e=""+e,t.wholeText!==e&&(t.data=e)}function g(t,e){t.value=null==e?"":e}function $(t,e){for(let n=0;n<t.options.length;n+=1){const o=t.options[n];if(o.__value===e)return void(o.selected=!0)}t.selectedIndex=-1}let A;function b(t){A=t}const x=[],N=[],L=[],z=[],y=Promise.resolve();let O=!1;function _(t){L.push(t)}const E=new Set;let C=0;function S(){const t=A;do{for(;C<x.length;){const t=x[C];C++,b(t),R(t.$$)}for(b(null),x.length=0,C=0;N.length;)N.pop()();for(let t=0;t<L.length;t+=1){const e=L[t];E.has(e)||(E.add(e),e())}L.length=0}while(x.length);for(;z.length;)z.pop()();O=!1,E.clear(),b(t)}function R(t){if(null!==t.fragment){t.update(),o(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(_)}}const F=new Set;function I(t,e){t&&t.i&&(F.delete(t),t.i(e))}function T(t,e,n,o){if(t&&t.o){if(F.has(t))return;F.add(t),undefined.c.push((()=>{F.delete(t),o&&(n&&t.d(1),o())})),t.o(e)}else o&&o()}function M(t){t&&t.c()}function D(t,n,r,c){const{fragment:a,on_mount:i,on_destroy:l,after_update:u}=t.$$;a&&a.m(n,r),c||_((()=>{const n=i.map(e).filter(s);l?l.push(...n):o(n),t.$$.on_mount=[]})),u.forEach(_)}function P(t,e){const n=t.$$;null!==n.fragment&&(o(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function B(t,e){-1===t.$$.dirty[0]&&(x.push(t),O||(O=!0,y.then(S)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function H(e,s,r,c,a,l,u,d=[-1]){const p=A;b(e);const m=e.$$={fragment:null,ctx:null,props:l,update:t,not_equal:a,bound:n(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(s.context||(p?p.$$.context:[])),callbacks:n(),dirty:d,skip_bound:!1,root:s.target||p.$$.root};u&&u(m.root);let f=!1;if(m.ctx=r?r(e,s.props||{},((t,n,...o)=>{const s=o.length?o[0]:n;return m.ctx&&a(m.ctx[t],m.ctx[t]=s)&&(!m.skip_bound&&m.bound[t]&&m.bound[t](s),f&&B(e,t)),n})):[],m.update(),f=!0,o(m.before_update),m.fragment=!!c&&c(m.ctx),s.target){if(s.hydrate){const t=function(t){return Array.from(t.childNodes)}(s.target);m.fragment&&m.fragment.l(t),t.forEach(i)}else m.fragment&&m.fragment.c();s.intro&&I(e.$$.fragment),D(e,s.target,s.anchor,s.customElement),S()}b(p)}class k{$destroy(){P(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(t){var e;this.$$set&&(e=t,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}}const w=[];function U(e,n=t){let o;const s=new Set;function c(t){if(r(e,t)&&(e=t,o)){const t=!w.length;for(const t of s)t[1](),w.push(t,e);if(t){for(let t=0;t<w.length;t+=2)w[t][0](w[t+1]);w.length=0}}}return{set:c,update:function(t){c(t(e))},subscribe:function(r,a=t){const i=[r,a];return s.add(i),1===s.size&&(o=n(c)||t),r(e),()=>{s.delete(i),0===s.size&&(o(),o=null)}}}}const G={subscribe:U({comparisons:[{name:"Arroz",price:17,amount:5,points:75},{name:"Feijão",price:6,amount:1,points:15},{name:"Leite",price:7,amount:1,points:10},{name:"Óleo",price:8,amount:1,points:10},{name:"Macarrão",price:8,amount:2,points:10},{name:"Lacre",price:100,amount:20,points:3400}],expenses:[{store:"Requetelo",item:"Bandeira",price:100,amount:1},{store:"Santa Helena",item:"Cano PVC",price:12,amount:1},{store:"Usadão Bady",item:"Garrafas Pets",price:.3,amount:80},{store:"Centro de Reciclagem",item:"Lacres",price:5,amount:30},{store:"Tema Print",item:"Posters",price:23,amount:2},{store:"Papelaria Central",item:"Bilhetes",price:18,amount:1}],donators:[{name:"MARIA NÍVEA 6° ANO",donation:0},{name:"MATHEUS 6° ANO",donation:15},{name:"MIGUEL 6° ANO",donation:0},{name:"RAFAEL 6º ANO",donation:0},{name:"VALENTINA 6° ANO",donation:0},{name:"ISABELLE 6° ANO",donation:20},{name:"AGATHA 7° ANO",donation:0},{name:"BETHINA 7º ANO",donation:0},{name:"ENZO 7° ANO",donation:20},{name:"FELIPE 7º ANO",donation:20},{name:"GABRIELLA 7° ANO",donation:20},{name:"JOÃO MATEUS 7° ANO",donation:30},{name:"WARLLEY 7° ANO",donation:0},{name:"LUCAS 8º ANO",donation:20},{name:"LUÍS FELIPE 8º ANO",donation:20},{name:"LUIZA 8° ANO",donation:0},{name:"MARIA CLARA 8° ANO",donation:20},{name:"MARIA FERNANDA 8° ANO",donation:50},{name:"MARIANA 8° ANO",donation:20},{name:"MATHEUS 8° ANO",donation:20},{name:"THÉO 8° ANO",donation:20},{name:"ANGELINA 9° ANO",donation:0},{name:"DANITCHELE 9° ANO",donation:20},{name:"EDUARDO 9° ANO",donation:20},{name:"GIOVANNA 9° ANO",donation:0},{name:"GUILHERME 9º ANO",donation:20},{name:"ENZO 1° MÉDIO",donation:80},{name:"MATHEUS 1° MÉDIO",donation:50}]},q).subscribe};var q;function j(t,e,n){const o=t.slice();return o[9]=e[n].name,o[10]=e[n].price,o[11]=e[n].amount,o[12]=e[n].points,o}function V(t){let e,n,o,s,r,l,m,h,g,$,A,b,x,N,L,z=t[9]+"",y=t[10]+"",O=t[11]+"",_=t[12]+"";return{c(){e=u("tr"),n=u("td"),o=d(z),s=p(),r=u("td"),l=d("R$"),m=d(y),h=d(",00"),g=p(),$=u("td"),A=d(O),b=p(),x=u("td"),N=d(_),L=p(),f(n,"class","svelte-15zvcps"),f(r,"class","svelte-15zvcps"),f($,"class","svelte-15zvcps"),f(x,"class","svelte-15zvcps")},m(t,i){a(t,e,i),c(e,n),c(n,o),c(e,s),c(e,r),c(r,l),c(r,m),c(r,h),c(e,g),c(e,$),c($,A),c(e,b),c(e,x),c(x,N),c(e,L)},p(t,e){1&e&&z!==(z=t[9]+"")&&v(o,z),1&e&&y!==(y=t[10]+"")&&v(m,y),1&e&&O!==(O=t[11]+"")&&v(A,O),1&e&&_!==(_=t[12]+"")&&v(N,_)},d(t){t&&i(e)}}}function Q(e){let n,s,r,d,v,A,b,x,N,L,z,y,O,E,C,S,R,F,I=e[0],T=[];for(let t=0;t<I.length;t+=1)T[t]=V(j(e,I,t));return{c(){n=u("div"),s=u("h1"),s.textContent="Comparador",r=p(),d=u("p"),d.textContent="Aqui você pode alterar os valores e fazer as comparações necessárias",v=p(),A=u("select"),b=u("option"),b.textContent="Padrão",x=u("option"),x.textContent="Preço",N=u("option"),N.textContent="Quantidade",L=u("option"),L.textContent="Pontos",z=p(),y=u("input"),O=p(),E=u("table"),C=u("tr"),C.innerHTML='<th class="svelte-15zvcps">Nome</th> \n    \t\t<th class="svelte-15zvcps">Preço</th> \n    \t\t<th class="svelte-15zvcps">Quantidade</th> \n    \t\t<th class="svelte-15zvcps">Pontos</th>',S=p();for(let t=0;t<T.length;t+=1)T[t].c();b.__value="default",b.value=b.__value,x.__value="price",x.value=x.__value,N.__value="amount",N.value=N.__value,L.__value="points",L.value=L.__value,void 0===e[1]&&_((()=>e[4].call(A))),f(y,"type","number"),f(E,"class","svelte-15zvcps")},m(t,o){a(t,n,o),c(n,s),c(n,r),c(n,d),c(n,v),c(n,A),c(A,b),c(A,x),c(A,N),c(A,L),$(A,e[1]),c(n,z),c(n,y),g(y,e[2]),c(n,O),c(n,E),c(E,C),c(E,S);for(let t=0;t<T.length;t+=1)T[t].m(E,null);R||(F=[m(A,"change",e[4]),m(A,"change",e[3]),m(y,"input",e[5]),m(y,"input",e[3])],R=!0)},p(t,[e]){if(2&e&&$(A,t[1]),4&e&&h(y.value)!==t[2]&&g(y,t[2]),1&e){let n;for(I=t[0],n=0;n<I.length;n+=1){const o=j(t,I,n);T[n]?T[n].p(o,e):(T[n]=V(o),T[n].c(),T[n].m(E,null))}for(;n<T.length;n+=1)T[n].d(1);T.length=I.length}},i:t,o:t,d(t){t&&i(n),l(T,t),R=!1,o(F)}}}function Z(t,e){let{name:n}=t;return{name:n,price:e,amount:Y(t.price,t.amount)(e).toFixed(0),points:Y(t.price,t.points)(e).toFixed(0)}}function J(t,e){let{name:n}=t;return{name:n,price:Y(t.amount,t.price)(e).toFixed(0),amount:e,points:Y(t.amount,t.points)(e).toFixed(0)}}function W(t,e){let{name:n}=t;return{name:n,price:Y(t.points,t.price)(e).toFixed(0),amount:Y(t.points,t.amount)(e).toFixed(0),points:e}}function Y(t,e){return n=>n*e/t}function K(t,e,n){let o,s;G.subscribe((t=>{o=n(0,s=t.comparisons),t.donators}));let r="default",c=0;return[s,r,c,function(){return"default"==r||0==c||null==c?n(0,s=o):void n(0,s=function(t,e){const n={price:Z,amount:J,points:W};return o.map((o=>n[t](o,e)))}(r,c))},function(){r=function(t){const e=t.querySelector(":checked")||t.options[0];return e&&e.__value}(this),n(1,r)},function(){c=h(this.value),n(2,c)}]}class X extends k{constructor(t){super(),H(this,t,K,Q,r,{})}}function tt(t,e,n){const o=t.slice();return o[5]=e[n].store,o[6]=e[n].item,o[7]=e[n].price,o[8]=e[n].amount,o}function et(t){let e,n,o,s,r,l,m,h,g,$,A,b,x,N,L=t[6]+"",z=t[7].toLocaleString("pt-br",{minimumFractionDigits:2,style:"currency",currency:"BRL"})+"",y=t[8]+"",O=t[7]*t[8]+"";return{c(){e=u("tr"),n=u("td"),o=d(L),s=p(),r=u("td"),l=d(z),m=p(),h=u("td"),g=d(y),$=p(),A=u("td"),b=d("R$"),x=d(O),N=d(",00"),f(n,"class","svelte-15zvcps"),f(r,"class","svelte-15zvcps"),f(h,"class","svelte-15zvcps"),f(A,"class","svelte-15zvcps")},m(t,i){a(t,e,i),c(e,n),c(n,o),c(e,s),c(e,r),c(r,l),c(e,m),c(e,h),c(h,g),c(e,$),c(e,A),c(A,b),c(A,x),c(A,N)},p(t,e){1&e&&L!==(L=t[6]+"")&&v(o,L),1&e&&z!==(z=t[7].toLocaleString("pt-br",{minimumFractionDigits:2,style:"currency",currency:"BRL"})+"")&&v(l,z),1&e&&y!==(y=t[8]+"")&&v(g,y),1&e&&O!==(O=t[7]*t[8]+"")&&v(x,O)},d(t){t&&i(e)}}}function nt(e){let n,o,s,r,d,m,h,v,g,$,A,b,x,N,L,z,y,O,_,E=e[0],C=[];for(let t=0;t<E.length;t+=1)C[t]=et(tt(e,E,t));return{c(){n=u("div"),o=u("h1"),o.textContent="Gastos",s=p(),r=u("p"),r.textContent="Recibo de todos os gastos ( Não necessariamente realizados )",d=p(),m=u("p"),m.textContent=`Total: ${(e[2]+e[1]).toLocaleString("pt-br",{minimumFractionDigits:2,style:"currency",currency:"BRL"})}`,h=p(),v=u("table"),g=u("tr"),g.innerHTML='<th class="svelte-15zvcps">Item</th> \n\t\t<th class="svelte-15zvcps">Preço</th> \n\t\t<th class="svelte-15zvcps">Quantidade</th> \n        <th class="svelte-15zvcps">Total</th>',$=p();for(let t=0;t<C.length;t+=1)C[t].c();A=p(),b=u("tr"),x=u("td"),x.textContent="Overdebt",N=p(),L=u("td"),L.textContent=`${ot(e[1])}`,z=p(),y=u("td"),y.textContent="1",O=p(),_=u("td"),_.textContent=`${ot(e[1])}`,f(x,"class","svelte-15zvcps"),f(L,"class","svelte-15zvcps"),f(y,"class","svelte-15zvcps"),f(_,"class","svelte-15zvcps"),f(v,"class","svelte-15zvcps")},m(t,e){a(t,n,e),c(n,o),c(n,s),c(n,r),c(n,d),c(n,m),c(n,h),c(n,v),c(v,g),c(v,$);for(let t=0;t<C.length;t+=1)C[t].m(v,null);c(v,A),c(v,b),c(b,x),c(b,N),c(b,L),c(b,z),c(b,y),c(b,O),c(b,_)},p(t,[e]){if(1&e){let n;for(E=t[0],n=0;n<E.length;n+=1){const o=tt(t,E,n);C[n]?C[n].p(o,e):(C[n]=et(o),C[n].c(),C[n].m(v,A))}for(;n<C.length;n+=1)C[n].d(1);C.length=E.length}},i:t,o:t,d(t){t&&i(n),l(C,t)}}}function ot(t){return t.toLocaleString("pt-br",{minimumFractionDigits:2,style:"currency",currency:"BRL"})}function st(t,e,n){let o,s;G.subscribe((t=>{n(0,o=t.expenses),s=t.donators}));let r=s.filter((t=>t.donation>20)).reduce(((t,e)=>t+(e.donation-20)),0),c=o.reduce(((t,e)=>t+e.price*e.amount),0);return[o,r,c]}class rt extends k{constructor(t){super(),H(this,t,st,nt,r,{})}}function ct(t,e,n){const o=t.slice();return o[8]=e[n].name,o[9]=e[n].donation,o}function at(t){let e,n,o,s,r,l,m,h,g,$,A,b,x,N,L=t[8]+"",z=t[9].toLocaleString("pt-br",t[2])+"",y=(100*t[9]/t[3]).toFixed(2)+"",O=(t[9]-t[4]).toLocaleString("pt-br",t[2])+"";return{c(){e=u("tr"),n=u("td"),o=d(L),s=p(),r=u("td"),l=d(z),m=p(),h=u("td"),g=d(y),$=d("%"),A=p(),b=u("td"),x=d(O),N=p(),f(n,"class","svelte-15zvcps"),f(r,"class","svelte-15zvcps"),f(h,"class","svelte-15zvcps"),f(b,"class","svelte-15zvcps")},m(t,i){a(t,e,i),c(e,n),c(n,o),c(e,s),c(e,r),c(r,l),c(e,m),c(e,h),c(h,g),c(h,$),c(e,A),c(e,b),c(b,x),c(e,N)},p(t,e){1&e&&L!==(L=t[8]+"")&&v(o,L),1&e&&z!==(z=t[9].toLocaleString("pt-br",t[2])+"")&&v(l,z),1&e&&y!==(y=(100*t[9]/t[3]).toFixed(2)+"")&&v(g,y),1&e&&O!==(O=(t[9]-t[4]).toLocaleString("pt-br",t[2])+"")&&v(x,O)},d(t){t&&i(e)}}}function it(e){let n,o,s,r,m,h,g,$,A,b,x,N,L=e[1].toLocaleString("pt-br",e[2])+"",z=e[0],y=[];for(let t=0;t<z.length;t+=1)y[t]=at(ct(e,z,t));return{c(){n=u("div"),o=u("h1"),o.textContent="Controle de Fundos",s=p(),r=u("p"),r.textContent=`Arrecadações: ${e[3].toLocaleString("pt-br",e[2])}`,m=p(),h=u("p"),g=d("Despesas: "),$=d(L),A=p(),b=u("table"),x=u("tr"),x.innerHTML='<th class="svelte-15zvcps">Nome</th> \n            <th class="svelte-15zvcps">Doação</th> \n            <th class="svelte-15zvcps">Parcela</th> \n            <th class="svelte-15zvcps">Cashback</th>',N=p();for(let t=0;t<y.length;t+=1)y[t].c();f(b,"class","svelte-15zvcps")},m(t,e){a(t,n,e),c(n,o),c(n,s),c(n,r),c(n,m),c(n,h),c(h,g),c(h,$),c(n,A),c(n,b),c(b,x),c(b,N);for(let t=0;t<y.length;t+=1)y[t].m(b,null)},p(t,[e]){if(2&e&&L!==(L=t[1].toLocaleString("pt-br",t[2])+"")&&v($,L),29&e){let n;for(z=t[0],n=0;n<z.length;n+=1){const o=ct(t,z,n);y[n]?y[n].p(o,e):(y[n]=at(o),y[n].c(),y[n].m(b,null))}for(;n<y.length;n+=1)y[n].d(1);y.length=z.length}},i:t,o:t,d(t){t&&i(n),l(y,t)}}}function lt(t,e,n){let o,s,r;G.subscribe((t=>{o=t.donators,n(0,s=t.donators),r=t.expenses}));let c=o.filter((t=>t.donation>20)).reduce(((t,e)=>t+(e.donation-20)),0),a=s.reduce(((t,e)=>t+e.donation),0),i=r.reduce(((t,e)=>t+e.price*e.amount),0);i+=c;let l=i/s.length;return t.$$.update=()=>{1&t.$$.dirty&&s.sort(((t,e)=>e.donation-t.donation))},[s,i,{minimumFractionDigits:2,style:"currency",currency:"BRL"},a,l]}class ut extends k{constructor(t){super(),H(this,t,lt,it,r,{})}}function dt(t,e,n){const o=t.slice();return o[4]=e[n].name,o[5]=e[n].donation,o}function pt(e){let n,o,s,r,l,m,h,v,g,$,A=e[4]+"",b=ft(e[5])+"",x=ft(e[5]-20)+"";return{c(){n=u("tr"),o=u("td"),s=d(A),r=p(),l=u("td"),m=d(b),h=p(),v=u("td"),g=d(x),$=p(),f(o,"class","svelte-15zvcps"),f(l,"class","svelte-15zvcps"),f(v,"class","svelte-15zvcps")},m(t,e){a(t,n,e),c(n,o),c(o,s),c(n,r),c(n,l),c(l,m),c(n,h),c(n,v),c(v,g),c(n,$)},p:t,d(t){t&&i(n)}}}function mt(e){let n,o,s,r,d,m,h,v,g,$,A=e[0],b=[];for(let t=0;t<A.length;t+=1)b[t]=pt(dt(e,A,t));return{c(){n=u("div"),o=u("h1"),o.textContent="Overdebt",s=p(),r=u("p"),r.textContent="Doações extras que precisam ser retornadas",d=p(),m=u("p"),m.textContent=`Total: ${ft(e[1])}`,h=p(),v=u("table"),g=u("tr"),g.innerHTML='<th class="svelte-15zvcps">Nome</th> \n\t\t<th class="svelte-15zvcps">Doação</th> \n\t\t<th class="svelte-15zvcps">Cashback</th>',$=p();for(let t=0;t<b.length;t+=1)b[t].c();f(v,"class","svelte-15zvcps")},m(t,e){a(t,n,e),c(n,o),c(n,s),c(n,r),c(n,d),c(n,m),c(n,h),c(n,v),c(v,g),c(v,$);for(let t=0;t<b.length;t+=1)b[t].m(v,null)},p(t,[e]){if(1&e){let n;for(A=t[0],n=0;n<A.length;n+=1){const o=dt(t,A,n);b[n]?b[n].p(o,e):(b[n]=pt(o),b[n].c(),b[n].m(v,null))}for(;n<b.length;n+=1)b[n].d(1);b.length=A.length}},i:t,o:t,d(t){t&&i(n),l(b,t)}}}function ft(t){return t.toLocaleString("pt-br",{minimumFractionDigits:2,style:"currency",currency:"BRL"})}function ht(t){let e;G.subscribe((t=>{t.expenses,e=t.donators}));let n=e.filter((t=>t.donation>20)).sort(((t,e)=>e.donation-t.donation)),o=n.reduce(((t,e)=>t+(e.donation-20)),0);return[n,o]}class vt extends k{constructor(t){super(),H(this,t,ht,mt,r,{})}}function gt(e){let n,o,s,r,c,l,u,d;return n=new X({}),s=new rt({}),c=new vt({}),u=new ut({}),{c(){M(n.$$.fragment),o=p(),M(s.$$.fragment),r=p(),M(c.$$.fragment),l=p(),M(u.$$.fragment)},m(t,e){D(n,t,e),a(t,o,e),D(s,t,e),a(t,r,e),D(c,t,e),a(t,l,e),D(u,t,e),d=!0},p:t,i(t){d||(I(n.$$.fragment,t),I(s.$$.fragment,t),I(c.$$.fragment,t),I(u.$$.fragment,t),d=!0)},o(t){T(n.$$.fragment,t),T(s.$$.fragment,t),T(c.$$.fragment,t),T(u.$$.fragment,t),d=!1},d(t){P(n,t),t&&i(o),P(s,t),t&&i(r),P(c,t),t&&i(l),P(u,t)}}}return new class extends k{constructor(t){super(),H(this,t,null,gt,r,{})}}({target:document.body})}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? null : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+        select.selectedIndex = -1; // no option should be selected
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
+    function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, cancelable, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (flushidx < dirty_components.length) {
+                const component = dirty_components[flushidx];
+                flushidx++;
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+        else if (callback) {
+            callback();
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.50.1' }, detail), { bubbles: true }));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    function pricify$1(x) {
+        return x.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
+    }
+
+    const subscriber_queue = [];
+    /**
+     * Create a `Writable` store that allows both updating and reading by subscription.
+     * @param {*=}value initial value
+     * @param {StartStopNotifier=}start start and stop notifications for subscriptions
+     */
+    function writable(value, start = noop) {
+        let stop;
+        const subscribers = new Set();
+        function set(new_value) {
+            if (safe_not_equal(value, new_value)) {
+                value = new_value;
+                if (stop) { // store is ready
+                    const run_queue = !subscriber_queue.length;
+                    for (const subscriber of subscribers) {
+                        subscriber[1]();
+                        subscriber_queue.push(subscriber, value);
+                    }
+                    if (run_queue) {
+                        for (let i = 0; i < subscriber_queue.length; i += 2) {
+                            subscriber_queue[i][0](subscriber_queue[i + 1]);
+                        }
+                        subscriber_queue.length = 0;
+                    }
+                }
+            }
+        }
+        function update(fn) {
+            set(fn(value));
+        }
+        function subscribe(run, invalidate = noop) {
+            const subscriber = [run, invalidate];
+            subscribers.add(subscriber);
+            if (subscribers.size === 1) {
+                stop = start(set) || noop;
+            }
+            run(value);
+            return () => {
+                subscribers.delete(subscriber);
+                if (subscribers.size === 0) {
+                    stop();
+                    stop = null;
+                }
+            };
+        }
+        return { set, update, subscribe };
+    }
+
+    const data$3 = [
+    	  	{
+                name: 'Lacre',
+                price: 150,
+                amount: 30,
+                points: 6200,
+            },
+            {
+                name: 'Arroz',
+                price: 17,
+                amount: 5,
+                points: 75,
+            },
+            {
+                name: 'Feijão',
+                price: 6,
+                amount: 1,
+                points: 15,
+            },
+            {
+                name:'Leite',
+                price: 7,
+                amount: 1,
+                points: 10,
+            },
+            {
+                name: 'Óleo',
+                price: 8,
+                amount: 1,
+                points: 10,
+            },
+            {
+                name: 'Macarrão',
+                price: 8,
+                amount: 2,
+                points: 10,
+            },
+    		{
+    			name: 'Brinquedos',
+                price: 10,
+                amount: 1,
+                points: 10,
+    		}
+    ];
+
+    const comparisons = writable(data$3);
+
+    /* src\components\Price.svelte generated by Svelte v3.50.1 */
+    const file$4 = "src\\components\\Price.svelte";
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[8] = list[i].name;
+    	child_ctx[9] = list[i].price;
+    	child_ctx[10] = list[i].amount;
+    	child_ctx[11] = list[i].points;
+    	return child_ctx;
+    }
+
+    // (92:5) {#each table as { name, price, amount, points }}
+    function create_each_block$4(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*name*/ ctx[8] + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let t2_value = pricify$1(/*price*/ ctx[9]) + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = /*amount*/ ctx[10] + "";
+    	let t4;
+    	let t5;
+    	let td3;
+    	let t6_value = /*points*/ ctx[11] + "";
+    	let t6;
+    	let t7;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			td3 = element("td");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			attr_dev(td0, "class", "svelte-15zvcps");
+    			add_location(td0, file$4, 93, 7, 2469);
+    			attr_dev(td1, "class", "svelte-15zvcps");
+    			add_location(td1, file$4, 94, 7, 2493);
+    			attr_dev(td2, "class", "svelte-15zvcps");
+    			add_location(td2, file$4, 95, 7, 2529);
+    			attr_dev(td3, "class", "svelte-15zvcps");
+    			add_location(td3, file$4, 96, 7, 2555);
+    			add_location(tr, file$4, 92, 6, 2456);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    			append_dev(tr, td3);
+    			append_dev(td3, t6);
+    			append_dev(tr, t7);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*table*/ 1 && t0_value !== (t0_value = /*name*/ ctx[8] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*table*/ 1 && t2_value !== (t2_value = pricify$1(/*price*/ ctx[9]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*table*/ 1 && t4_value !== (t4_value = /*amount*/ ctx[10] + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*table*/ 1 && t6_value !== (t6_value = /*points*/ ctx[11] + "")) set_data_dev(t6, t6_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$4.name,
+    		type: "each",
+    		source: "(92:5) {#each table as { name, price, amount, points }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$5(ctx) {
+    	let div;
+    	let h1;
+    	let t1;
+    	let p;
+    	let t3;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let option3;
+    	let t8;
+    	let input;
+    	let t9;
+    	let table_1;
+    	let tr;
+    	let th0;
+    	let t11;
+    	let th1;
+    	let t13;
+    	let th2;
+    	let t15;
+    	let th3;
+    	let t17;
+    	let mounted;
+    	let dispose;
+    	let each_value = /*table*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Comparador";
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Aqui você pode alterar os valores e fazer as comparações necessárias";
+    			t3 = space();
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Padrão";
+    			option1 = element("option");
+    			option1.textContent = "Preço";
+    			option2 = element("option");
+    			option2.textContent = "Quantidade";
+    			option3 = element("option");
+    			option3.textContent = "Pontos";
+    			t8 = space();
+    			input = element("input");
+    			t9 = space();
+    			table_1 = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Nome";
+    			t11 = space();
+    			th1 = element("th");
+    			th1.textContent = "Preço";
+    			t13 = space();
+    			th2 = element("th");
+    			th2.textContent = "Quantidade";
+    			t15 = space();
+    			th3 = element("th");
+    			th3.textContent = "Pontos";
+    			t17 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h1, file$4, 72, 4, 1840);
+    			add_location(p, file$4, 73, 4, 1865);
+    			option0.__value = "default";
+    			option0.value = option0.__value;
+    			add_location(option0, file$4, 76, 5, 2005);
+    			option1.__value = "price";
+    			option1.value = option1.__value;
+    			add_location(option1, file$4, 77, 5, 2049);
+    			option2.__value = "amount";
+    			option2.value = option2.__value;
+    			add_location(option2, file$4, 78, 5, 2090);
+    			option3.__value = "points";
+    			option3.value = option3.__value;
+    			add_location(option3, file$4, 79, 5, 2137);
+    			if (/*type*/ ctx[1] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
+    			add_location(select, file$4, 75, 4, 1948);
+    			attr_dev(input, "type", "number");
+    			add_location(input, file$4, 82, 4, 2200);
+    			attr_dev(th0, "class", "svelte-15zvcps");
+    			add_location(th0, file$4, 86, 6, 2295);
+    			attr_dev(th1, "class", "svelte-15zvcps");
+    			add_location(th1, file$4, 87, 6, 2316);
+    			attr_dev(th2, "class", "svelte-15zvcps");
+    			add_location(th2, file$4, 88, 6, 2338);
+    			attr_dev(th3, "class", "svelte-15zvcps");
+    			add_location(th3, file$4, 89, 6, 2366);
+    			add_location(tr, file$4, 85, 5, 2283);
+    			attr_dev(table_1, "class", "svelte-15zvcps");
+    			add_location(table_1, file$4, 84, 4, 2269);
+    			add_location(div, file$4, 71, 0, 1829);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t1);
+    			append_dev(div, p);
+    			append_dev(div, t3);
+    			append_dev(div, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			append_dev(select, option3);
+    			select_option(select, /*type*/ ctx[1]);
+    			append_dev(div, t8);
+    			append_dev(div, input);
+    			set_input_value(input, /*value*/ ctx[2]);
+    			append_dev(div, t9);
+    			append_dev(div, table_1);
+    			append_dev(table_1, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t11);
+    			append_dev(tr, th1);
+    			append_dev(tr, t13);
+    			append_dev(tr, th2);
+    			append_dev(tr, t15);
+    			append_dev(tr, th3);
+    			append_dev(table_1, t17);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table_1, null);
+    			}
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[4]),
+    					listen_dev(select, "change", /*handleInput*/ ctx[3], false, false, false),
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[5]),
+    					listen_dev(input, "input", /*handleInput*/ ctx[3], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*type*/ 2) {
+    				select_option(select, /*type*/ ctx[1]);
+    			}
+
+    			if (dirty & /*value*/ 4 && to_number(input.value) !== /*value*/ ctx[2]) {
+    				set_input_value(input, /*value*/ ctx[2]);
+    			}
+
+    			if (dirty & /*table, pricify*/ 1) {
+    				each_value = /*table*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table_1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$5.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function adjustPrice(item, price) {
+    	let { name } = item;
+    	let amount = proportion(item.price, item.amount)(price).toFixed(0);
+    	let points = proportion(item.price, item.points)(price).toFixed(0);
+    	return { name, price, amount, points };
+    }
+
+    function adjustAmount(item, amount) {
+    	let { name } = item;
+    	let price = proportion(item.amount, item.price)(amount).toFixed(0);
+    	let points = proportion(item.amount, item.points)(amount).toFixed(0);
+    	return { name, price, amount, points };
+    }
+
+    function adjustPoints(item, points) {
+    	let { name } = item;
+    	let price = proportion(item.points, item.price)(points).toFixed(0);
+    	let amount = proportion(item.points, item.amount)(points).toFixed(0);
+    	return { name, price, amount, points };
+    }
+
+    function proportion(it, equals) {
+    	return that => that * equals / it;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Price', slots, []);
+    	let data;
+    	let table;
+
+    	comparisons.subscribe(comp => {
+    		data = $$invalidate(0, table = comp);
+    	});
+
+    	let type = 'default';
+    	let value = 0;
+
+    	function handleInput() {
+    		if (type == 'default') return $$invalidate(0, table = data);
+    		if (value == 0 || value == null) return $$invalidate(0, table = data);
+    		$$invalidate(0, table = queryData(type, value));
+    	}
+
+    	// --------------------------------------------- //
+    	function queryData(type, value) {
+    		const queryTable = {
+    			'price': adjustPrice,
+    			'amount': adjustAmount,
+    			'points': adjustPoints
+    		};
+
+    		return data.map(item => queryTable[type](item, value));
+    	}
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Price> was created with unknown prop '${key}'`);
+    	});
+
+    	function select_change_handler() {
+    		type = select_value(this);
+    		$$invalidate(1, type);
+    	}
+
+    	function input_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(2, value);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		pricify: pricify$1,
+    		comparisons,
+    		data,
+    		table,
+    		type,
+    		value,
+    		handleInput,
+    		queryData,
+    		adjustPrice,
+    		adjustAmount,
+    		adjustPoints,
+    		proportion
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('data' in $$props) data = $$props.data;
+    		if ('table' in $$props) $$invalidate(0, table = $$props.table);
+    		if ('type' in $$props) $$invalidate(1, type = $$props.type);
+    		if ('value' in $$props) $$invalidate(2, value = $$props.value);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [table, type, value, handleInput, select_change_handler, input_input_handler];
+    }
+
+    class Price extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Price",
+    			options,
+    			id: create_fragment$5.name
+    		});
+    	}
+    }
+
+    const data$2 = [
+        { 
+            store: 'Requetelo',
+            item: 'Bandeira',
+            price: 100,
+            amount: 1,
+        },
+        { 
+            store: 'Santa Helena',
+            item: 'Cano PVC',
+            price: 12,
+            amount: 1,
+        },
+        {
+            store: 'Usadão Bady',
+            item: 'Garrafas Pets',
+            price: 0.3,
+            amount: 80,
+        },
+        {
+            store: 'Centro de Reciclagem',
+            item: 'Lacres',
+            price: 5,
+            amount: 30
+        },
+        {
+            store: 'Tema Print',
+            item: 'Posters',
+            price: 23,
+            amount: 2
+        },
+        {
+            store: 'Papelaria Central',
+            item: 'Bilhetes',
+            price: 18,
+            amount: 1
+        },
+        {
+            store: 'São Luís',
+            item: 'Decorações',
+            price: 10,
+            amount: 1
+        },
+        {
+            store: 'Tema Print',
+            item: 'Emblema',
+            price: 30,
+            amount: 1
+        },
+        {
+            store: 'Conveniência',
+            item: 'Saco de lixo',
+            price: 3.75,
+            amount: 1
+        },
+        {
+            store: 'Ebisu',
+            item: 'Fita isolante',
+            price: 10,
+            amount: 2
+        },
+        {
+            store: 'Cacau Show',
+            item: 'Cesta da Rifa',
+            price: 60,
+            amount: 1
+        },
+    ];
+
+    const expenses = writable(data$2);
+
+    /* src\components\Expenses.svelte generated by Svelte v3.50.1 */
+    const file$3 = "src\\components\\Expenses.svelte";
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[2] = list[i].item;
+    	child_ctx[3] = list[i].price;
+    	child_ctx[4] = list[i].amount;
+    	return child_ctx;
+    }
+
+    // (31:1) {#each table as { item, price, amount }}
+    function create_each_block$3(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*item*/ ctx[2] + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let t2_value = pricify$1(/*price*/ ctx[3]) + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = /*amount*/ ctx[4] + "";
+    	let t4;
+    	let t5;
+    	let td3;
+    	let t6_value = pricify$1(/*price*/ ctx[3] * /*amount*/ ctx[4]) + "";
+    	let t6;
+    	let t7;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			td3 = element("td");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			attr_dev(td0, "class", "svelte-15zvcps");
+    			add_location(td0, file$3, 32, 3, 562);
+    			attr_dev(td1, "class", "svelte-15zvcps");
+    			add_location(td1, file$3, 33, 3, 582);
+    			attr_dev(td2, "class", "svelte-15zvcps");
+    			add_location(td2, file$3, 34, 3, 614);
+    			attr_dev(td3, "class", "svelte-15zvcps");
+    			add_location(td3, file$3, 35, 12, 645);
+    			add_location(tr, file$3, 31, 2, 553);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    			append_dev(tr, td3);
+    			append_dev(td3, t6);
+    			append_dev(tr, t7);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*table*/ 1 && t0_value !== (t0_value = /*item*/ ctx[2] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*table*/ 1 && t2_value !== (t2_value = pricify$1(/*price*/ ctx[3]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*table*/ 1 && t4_value !== (t4_value = /*amount*/ ctx[4] + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*table*/ 1 && t6_value !== (t6_value = pricify$1(/*price*/ ctx[3] * /*amount*/ ctx[4]) + "")) set_data_dev(t6, t6_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$3.name,
+    		type: "each",
+    		source: "(31:1) {#each table as { item, price, amount }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	let div;
+    	let h1;
+    	let t1;
+    	let p0;
+    	let t3;
+    	let p1;
+    	let t4;
+    	let t5_value = pricify$1(/*total*/ ctx[1]) + "";
+    	let t5;
+    	let t6;
+    	let table_1;
+    	let tr;
+    	let th0;
+    	let t8;
+    	let th1;
+    	let t10;
+    	let th2;
+    	let t12;
+    	let th3;
+    	let t14;
+    	let each_value = /*table*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Gastos";
+    			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = "Recibo de todos os gastos";
+    			t3 = space();
+    			p1 = element("p");
+    			t4 = text("Total: ");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			table_1 = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Item";
+    			t8 = space();
+    			th1 = element("th");
+    			th1.textContent = "Preço";
+    			t10 = space();
+    			th2 = element("th");
+    			th2.textContent = "Quantidade";
+    			t12 = space();
+    			th3 = element("th");
+    			th3.textContent = "Total";
+    			t14 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h1, file$3, 20, 0, 311);
+    			add_location(p0, file$3, 21, 0, 328);
+    			add_location(p1, file$3, 22, 0, 362);
+    			attr_dev(th0, "class", "svelte-15zvcps");
+    			add_location(th0, file$3, 25, 8, 420);
+    			attr_dev(th1, "class", "svelte-15zvcps");
+    			add_location(th1, file$3, 26, 2, 437);
+    			attr_dev(th2, "class", "svelte-15zvcps");
+    			add_location(th2, file$3, 27, 2, 455);
+    			attr_dev(th3, "class", "svelte-15zvcps");
+    			add_location(th3, file$3, 28, 8, 484);
+    			add_location(tr, file$3, 24, 1, 406);
+    			attr_dev(table_1, "class", "svelte-15zvcps");
+    			add_location(table_1, file$3, 23, 0, 396);
+    			add_location(div, file$3, 19, 0, 304);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t1);
+    			append_dev(div, p0);
+    			append_dev(div, t3);
+    			append_dev(div, p1);
+    			append_dev(p1, t4);
+    			append_dev(p1, t5);
+    			append_dev(div, t6);
+    			append_dev(div, table_1);
+    			append_dev(table_1, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t8);
+    			append_dev(tr, th1);
+    			append_dev(tr, t10);
+    			append_dev(tr, th2);
+    			append_dev(tr, t12);
+    			append_dev(tr, th3);
+    			append_dev(table_1, t14);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table_1, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*total*/ 2 && t5_value !== (t5_value = pricify$1(/*total*/ ctx[1]) + "")) set_data_dev(t5, t5_value);
+
+    			if (dirty & /*pricify, table*/ 1) {
+    				each_value = /*table*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table_1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let total;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Expenses', slots, []);
+    	let table;
+
+    	expenses.subscribe(data => {
+    		$$invalidate(0, table = data);
+    	});
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Expenses> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ pricify: pricify$1, expenses, table, total });
+
+    	$$self.$inject_state = $$props => {
+    		if ('table' in $$props) $$invalidate(0, table = $$props.table);
+    		if ('total' in $$props) $$invalidate(1, total = $$props.total);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*table*/ 1) {
+    			$$invalidate(1, total = table.reduce((acc, purchase) => acc += purchase.price * purchase.amount, 0));
+    		}
+    	};
+
+    	return [table, total];
+    }
+
+    class Expenses extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Expenses",
+    			options,
+    			id: create_fragment$4.name
+    		});
+    	}
+    }
+
+    const data$1 = [
+        { name: 'MARIA NÍVEA 6° ANO', donation: 0 },
+        { name: 'MATHEUS 6° ANO', donation: 15 },
+        { name: 'MIGUEL 6° ANO', donation: 0 },
+        { name: 'RAFAEL 6º ANO', donation: 0 },
+        { name: 'VALENTINA 6° ANO', donation: 0 },
+        { name: 'ISABELLE 6° ANO', donation: 20 },
+        { name: 'AGATHA 7° ANO', donation: 20 },
+        { name: 'BETHINA 7º ANO', donation: 20 },
+        { name: 'ENZO 7° ANO', donation: 20 },
+        { name: 'FELIPE 7º ANO', donation: 20 },
+        { name: 'GABRIELLA 7° ANO', donation: 20 },
+        { name: 'JOÃO MATEUS 7° ANO', donation: 30 },
+        { name: 'WARLLEY 7° ANO', donation: 20 },
+        { name: 'LUCAS 8º ANO', donation: 20 },
+        { name: 'LUÍS FELIPE 8º ANO', donation: 20 },
+        { name: 'LUIZA 8° ANO', donation: 0 },
+        { name: 'MARIA CLARA 8° ANO', donation: 20 },
+        { name: 'MARIA FERNANDA 8° ANO', donation: 110 },
+        { name: 'MARIANA 8° ANO', donation: 20 },
+        { name: 'MATHEUS 8° ANO', donation: 20 },
+        { name: 'THÉO 8° ANO', donation: 20 },
+        { name: 'ANGELINA 9° ANO', donation: 20 },
+        { name: 'DANITCHELE 9° ANO', donation: 20 },
+        { name: 'EDUARDO 9° ANO', donation: 20 },
+        { name: 'GIOVANNA 9° ANO', donation: 20 },
+        { name: 'GUILHERME 9º ANO', donation: 20 },
+        { name: 'ENZO 1° MÉDIO', donation: 110 },
+        { name: 'MATHEUS 1° MÉDIO', donation: 50 }
+    ];
+
+    const donators = writable(data$1);
+
+    /* src\components\CFC.svelte generated by Svelte v3.50.1 */
+    const file$2 = "src\\components\\CFC.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i].name;
+    	child_ctx[6] = list[i].donation;
+    	return child_ctx;
+    }
+
+    // (40:8) {#each donatorsTable as { name, donation }}
+    function create_each_block$2(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*name*/ ctx[5] + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let t2_value = pricify(/*donation*/ ctx[6]) + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = pricify(/*donation*/ ctx[6] - /*used*/ ctx[3]) + "";
+    	let t4;
+    	let t5;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			attr_dev(td0, "class", "svelte-15zvcps");
+    			add_location(td0, file$2, 41, 16, 1131);
+    			attr_dev(td1, "class", "svelte-15zvcps");
+    			add_location(td1, file$2, 42, 16, 1164);
+    			attr_dev(td2, "class", "svelte-15zvcps");
+    			add_location(td2, file$2, 43, 16, 1210);
+    			add_location(tr, file$2, 40, 12, 1109);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*donatorsTable*/ 1 && t0_value !== (t0_value = /*name*/ ctx[5] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*donatorsTable*/ 1 && t2_value !== (t2_value = pricify(/*donation*/ ctx[6]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*donatorsTable*/ 1 && t4_value !== (t4_value = pricify(/*donation*/ ctx[6] - /*used*/ ctx[3]) + "")) set_data_dev(t4, t4_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(40:8) {#each donatorsTable as { name, donation }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let div;
+    	let h1;
+    	let t1;
+    	let p0;
+    	let t4;
+    	let p1;
+    	let t7;
+    	let table;
+    	let tr;
+    	let th0;
+    	let t9;
+    	let th1;
+    	let t11;
+    	let th2;
+    	let t13;
+    	let each_value = /*donatorsTable*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Controle de Fundos";
+    			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = `Arrecadações: ${pricify(/*revenue*/ ctx[1])}`;
+    			t4 = space();
+    			p1 = element("p");
+    			p1.textContent = `Despesas: ${pricify(/*debt*/ ctx[2])}`;
+    			t7 = space();
+    			table = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Nome";
+    			t9 = space();
+    			th1 = element("th");
+    			th1.textContent = "Doação";
+    			t11 = space();
+    			th2 = element("th");
+    			th2.textContent = "Cashback";
+    			t13 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h1, file$2, 30, 4, 798);
+    			add_location(p0, file$2, 31, 4, 832);
+    			add_location(p1, file$2, 32, 4, 879);
+    			attr_dev(th0, "class", "svelte-15zvcps");
+    			add_location(th0, file$2, 35, 12, 954);
+    			attr_dev(th1, "class", "svelte-15zvcps");
+    			add_location(th1, file$2, 36, 12, 981);
+    			attr_dev(th2, "class", "svelte-15zvcps");
+    			add_location(th2, file$2, 37, 12, 1010);
+    			add_location(tr, file$2, 34, 8, 936);
+    			attr_dev(table, "class", "svelte-15zvcps");
+    			add_location(table, file$2, 33, 4, 919);
+    			add_location(div, file$2, 29, 0, 787);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t1);
+    			append_dev(div, p0);
+    			append_dev(div, t4);
+    			append_dev(div, p1);
+    			append_dev(div, t7);
+    			append_dev(div, table);
+    			append_dev(table, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t9);
+    			append_dev(tr, th1);
+    			append_dev(tr, t11);
+    			append_dev(tr, th2);
+    			append_dev(table, t13);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*pricify, donatorsTable, used*/ 9) {
+    				each_value = /*donatorsTable*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function pricify(x) {
+    	return x.toLocaleString('pt-br', {
+    		minimumFractionDigits: 2,
+    		style: 'currency',
+    		currency: 'BRL'
+    	});
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('CFC', slots, []);
+    	let donatorsTable;
+    	let expensesTable;
+
+    	donators.subscribe(data => {
+    		$$invalidate(0, donatorsTable = [...data]);
+    	});
+
+    	expenses.subscribe(data => {
+    		expensesTable = [...data];
+    	});
+
+    	donatorsTable.sort((b, a) => a.donation - b.donation);
+    	let revenue = donatorsTable.reduce((acc, donator) => acc += donator.donation, 0);
+    	let debt = expensesTable.reduce((acc, purchase) => acc += purchase.price * purchase.amount, 0);
+    	let used = debt / donatorsTable.length;
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<CFC> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		donatorsTable,
+    		expensesTable,
+    		donators,
+    		expenses,
+    		revenue,
+    		debt,
+    		used,
+    		pricify
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('donatorsTable' in $$props) $$invalidate(0, donatorsTable = $$props.donatorsTable);
+    		if ('expensesTable' in $$props) expensesTable = $$props.expensesTable;
+    		if ('revenue' in $$props) $$invalidate(1, revenue = $$props.revenue);
+    		if ('debt' in $$props) $$invalidate(2, debt = $$props.debt);
+    		if ('used' in $$props) $$invalidate(3, used = $$props.used);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [donatorsTable, revenue, debt, used];
+    }
+
+    class CFC extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "CFC",
+    			options,
+    			id: create_fragment$3.name
+    		});
+    	}
+    }
+
+    /* src\components\Overdebt.svelte generated by Svelte v3.50.1 */
+    const file$1 = "src\\components\\Overdebt.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[2] = list[i].name;
+    	child_ctx[3] = list[i].donation;
+    	return child_ctx;
+    }
+
+    // (42:4) {#each over as { name, donation }}
+    function create_each_block$1(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*name*/ ctx[2] + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let t2_value = pricify$1(/*donation*/ ctx[3]) + "";
+    	let t2;
+    	let t3;
+    	let td2;
+    	let t4_value = pricify$1(/*donation*/ ctx[3] - 20) + "";
+    	let t4;
+    	let t5;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			attr_dev(td0, "class", "svelte-15zvcps");
+    			add_location(td0, file$1, 43, 12, 954);
+    			attr_dev(td1, "class", "svelte-15zvcps");
+    			add_location(td1, file$1, 44, 12, 983);
+    			attr_dev(td2, "class", "svelte-15zvcps");
+    			add_location(td2, file$1, 45, 12, 1025);
+    			add_location(tr, file$1, 42, 8, 936);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*over*/ 1 && t0_value !== (t0_value = /*name*/ ctx[2] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*over*/ 1 && t2_value !== (t2_value = pricify$1(/*donation*/ ctx[3]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*over*/ 1 && t4_value !== (t4_value = pricify$1(/*donation*/ ctx[3] - 20) + "")) set_data_dev(t4, t4_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(42:4) {#each over as { name, donation }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$2(ctx) {
+    	let div;
+    	let h1;
+    	let t1;
+    	let p0;
+    	let t3;
+    	let p1;
+    	let t4;
+    	let t5_value = pricify$1(/*total*/ ctx[1]) + "";
+    	let t5;
+    	let t6;
+    	let table;
+    	let tr;
+    	let th0;
+    	let t8;
+    	let th1;
+    	let t10;
+    	let th2;
+    	let t12;
+    	let each_value = /*over*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Overdebt";
+    			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = "Doações extras que precisam ser retornadas";
+    			t3 = space();
+    			p1 = element("p");
+    			t4 = text("Total: ");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			table = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Nome";
+    			t8 = space();
+    			th1 = element("th");
+    			th1.textContent = "Doação";
+    			t10 = space();
+    			th2 = element("th");
+    			th2.textContent = "Cashback";
+    			t12 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h1, file$1, 32, 0, 692);
+    			add_location(p0, file$1, 33, 0, 711);
+    			add_location(p1, file$1, 34, 0, 763);
+    			attr_dev(th0, "class", "svelte-15zvcps");
+    			add_location(th0, file$1, 37, 8, 825);
+    			attr_dev(th1, "class", "svelte-15zvcps");
+    			add_location(th1, file$1, 38, 2, 842);
+    			attr_dev(th2, "class", "svelte-15zvcps");
+    			add_location(th2, file$1, 39, 2, 861);
+    			add_location(tr, file$1, 36, 4, 811);
+    			attr_dev(table, "class", "svelte-15zvcps");
+    			add_location(table, file$1, 35, 0, 798);
+    			add_location(div, file$1, 31, 0, 685);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t1);
+    			append_dev(div, p0);
+    			append_dev(div, t3);
+    			append_dev(div, p1);
+    			append_dev(p1, t4);
+    			append_dev(p1, t5);
+    			append_dev(div, t6);
+    			append_dev(div, table);
+    			append_dev(table, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t8);
+    			append_dev(tr, th1);
+    			append_dev(tr, t10);
+    			append_dev(tr, th2);
+    			append_dev(table, t12);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*total*/ 2 && t5_value !== (t5_value = pricify$1(/*total*/ ctx[1]) + "")) set_data_dev(t5, t5_value);
+
+    			if (dirty & /*pricify, over*/ 1) {
+    				each_value = /*over*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let total;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Overdebt', slots, []);
+    	let over;
+
+    	donators.subscribe(data => {
+    		$$invalidate(0, over = data.filter(donator => donator.donation > 20).sort((a, b) => b.donation - a.donation));
+    	});
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Overdebt> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ pricify: pricify$1, donators, expenses, over, total });
+
+    	$$self.$inject_state = $$props => {
+    		if ('over' in $$props) $$invalidate(0, over = $$props.over);
+    		if ('total' in $$props) $$invalidate(1, total = $$props.total);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*over*/ 1) {
+    			$$invalidate(1, total = over.reduce((acc, donator) => acc += donator.donation - 20, 0));
+    		}
+
+    		if ($$self.$$.dirty & /*total*/ 2) {
+    			expenses.update(data => {
+    				data.push({
+    					store: 'Gincana',
+    					item: 'Overdebt',
+    					price: total,
+    					amount: 1
+    				});
+
+    				return data;
+    			});
+    		}
+    	};
+
+    	return [over, total];
+    }
+
+    class Overdebt extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Overdebt",
+    			options,
+    			id: create_fragment$2.name
+    		});
+    	}
+    }
+
+    const data = [
+        { id: '00', height: 21.5, box: 1 },
+        { id: '01', height: 21.5, box: 1 },
+        { id: '02', height: 22, box: 1 },
+        { id: '03', height: 22.5, box: 1 },
+        { id: '04', height: 24, box: 1 },
+        { id: '05', height: 24, box: 1 },
+        { id: '06', height: 21, box: 1 },
+        { id: '07', height: 20.5, box: 1 },
+        { id: '08', height: 24, box: 1 },
+        { id: '09', height: 22, box: 2 },
+        { id: '0a', height: 22.5, box: 2 },
+        { id: '0b', height: 23, box: 2 },
+        { id: '0c', height: 22.5, box: 2 },
+        { id: '0d', height: 23.5, box: 2 },
+        { id: '0e', height: 22, box: 2 },
+        { id: '0f', height: 22, box: 2 },
+        { id: '10', height: 20.5, box: 2 },
+        { id: '11', height: 23.5, box: 2 },
+        { id: '12', height: 21, box: 3 },
+        { id: '13', height: 22, box: 3 },
+        { id: '14', height: 22.5, box: 3 },
+        { id: '15', height: 22.5, box: 3 },
+        { id: '16', height: 20, box: 3 },
+        { id: '17', height: 23, box: 3 },
+        { id: '18', height: 22.5, box: 3 },
+        { id: '19', height: 23, box: 3 },
+        { id: '1a', height: 22, box: 3 },
+        { id: '1b', height: 23.5, box: 4 },
+        { id: '1c', height: 20, box: 4 },
+        { id: '1d', height: 22, box: 4 },
+        { id: '1e', height: 22.5, box: 4 },
+        { id: '1f', height: 20, box: 4 },
+        { id: '20', height: 20.5, box: 4 },
+        { id: '21', height: 23, box: 4 },
+        { id: '22', height: 20.5, box: 4 },
+        { id: '23', height: 24, box: 4 },
+        { id: '24', height: 22.5, box: 5 },
+        { id: '25', height: 22, box: 5 },
+        { id: '26', height: 22, box: 5 },
+        { id: '27', height: 21.5, box: 5 },
+        { id: '28', height: 23, box: 5 },
+        { id: '29', height: 20.5, box: 5 },
+        { id: '2a', height: 22.5, box: 5 },
+        { id: '2b', height: 24, box: 5 },
+        { id: '2c', height: 22, box: 5 },
+        { id: '2d', height: 21.5, box: 6 },
+        { id: '2e', height: 22, box: 6 },
+        { id: '2f', height: 23, box: 6 },
+        { id: '30', height: 22.5, box: 6 },
+        { id: '31', height: 22, box: 6 },
+        { id: '32', height: 24, box: 6 },
+        { id: '33', height: 23.5, box: 6 },
+        { id: '34', height: 22, box: 6 },
+        { id: '35', height: 20.5, box: 6 },
+        { id: '36', height: 21, box: 7 },
+        { id: '37', height: 23.5, box: 7 },
+        { id: '38', height: 23.5, box: 7 },
+        { id: '39', height: 22.5, box: 7 },
+        { id: '3a', height: 21.5, box: 7 },
+        { id: '3b', height: 22.5, box: 7 },
+        { id: '3c', height: 22.5, box: 7 }
+    ];
+
+    const bottles = writable(data);
+
+    class Population extends Array {
+        get even() {
+            return this.length % 2 === 0;
+        };
+
+        get odd() {
+            return !this.even;
+        };
+
+        get sum() {
+            return Population.sum(...this);
+        };
+
+        get avarage() {
+            return Population.avarage(...this);
+        };
+
+        get mean() {
+            return this.avarage;
+        };
+
+        get median() {
+            let even = this.even;
+            let length = this.length;
+            let sorted = this.sorted();
+
+            if (even)
+                return Population.avarage(sorted[(length / 2) - 1], sorted[(length / 2)])
+                return sorted[(length - 1) / 2];
+        };
+        
+        sorted(callback = (a, b) => b - a) {
+            return [...this].sort(callback);
+        };
+
+        get avarageAbsoluteDeviation() {
+
+            let mean = this.mean;
+            let length = this.length;
+
+            let distancesMap = this.map(dataPoint => Math.abs(dataPoint - mean));
+            let avarageDistance = distancesMap.reduce((a, b) => a + b) / length;
+
+            return avarageDistance;
+        };
+
+        get standardDeviation() {
+
+            let mean = this.mean;
+            let length = this.length;
+            
+            let squaresMap = this.map(dataPoint => (dataPoint - mean) ** 2);
+            let avarageSquare = squaresMap.reduce((a, b) => a + b) / length;
+
+            return Math.sqrt(avarageSquare);
+        };
+
+        static avarage(...elements) {
+            return elements.reduce((a, b) => a + b) / elements.length;
+        };
+
+        static sum(...elements) {
+            return elements.reduce((a, b) => a + b);
+        };
+    }
+
+    /* src\components\Bottles.svelte generated by Svelte v3.50.1 */
+    const file = "src\\components\\Bottles.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[8] = list[i].id;
+    	child_ctx[9] = list[i].height;
+    	child_ctx[10] = list[i].box;
+    	return child_ctx;
+    }
+
+    // (80:4) {#each dynamic as { id, height, box }}
+    function create_each_block(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*id*/ ctx[8] + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let t2_value = /*height*/ ctx[9] + "";
+    	let t2;
+    	let t3;
+    	let t4;
+    	let td2;
+    	let t5_value = /*box*/ ctx[10] + "";
+    	let t5;
+    	let t6;
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = text(" cm");
+    			t4 = space();
+    			td2 = element("td");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			attr_dev(td0, "class", "svelte-15zvcps");
+    			add_location(td0, file, 81, 12, 2384);
+    			attr_dev(td1, "class", "svelte-15zvcps");
+    			add_location(td1, file, 82, 12, 2411);
+    			attr_dev(td2, "class", "svelte-15zvcps");
+    			add_location(td2, file, 83, 12, 2445);
+    			add_location(tr, file, 80, 8, 2366);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(td1, t3);
+    			append_dev(tr, t4);
+    			append_dev(tr, td2);
+    			append_dev(td2, t5);
+    			append_dev(tr, t6);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*dynamic*/ 1 && t0_value !== (t0_value = /*id*/ ctx[8] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*dynamic*/ 1 && t2_value !== (t2_value = /*height*/ ctx[9] + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*dynamic*/ 1 && t5_value !== (t5_value = /*box*/ ctx[10] + "")) set_data_dev(t5, t5_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(80:4) {#each dynamic as { id, height, box }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let h1;
+    	let t1;
+    	let p;
+    	let t3;
+    	let h20;
+    	let t5;
+    	let ul0;
+    	let li0;
+    	let t9;
+    	let li1;
+    	let t13;
+    	let li2;
+    	let t17;
+    	let li3;
+    	let t21;
+    	let h21;
+    	let t23;
+    	let ul1;
+    	let li4;
+    	let t27;
+    	let li5;
+    	let t31;
+    	let li6;
+    	let t34;
+    	let li7;
+    	let t37;
+    	let h22;
+    	let t39;
+    	let ul2;
+    	let li8;
+    	let t45;
+    	let li9;
+    	let t49;
+    	let li10;
+    	let t53;
+    	let table_1;
+    	let tr;
+    	let th0;
+    	let t55;
+    	let th1;
+    	let t57;
+    	let th2;
+    	let t59;
+    	let each_value = /*dynamic*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Garrafas";
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Todas as garrafas contabilizadas e lotificadas";
+    			t3 = space();
+    			h20 = element("h2");
+    			h20.textContent = "Dimensões";
+    			t5 = space();
+    			ul0 = element("ul");
+    			li0 = element("li");
+    			li0.textContent = `Raio: ${/*bottleRadius*/ ctx[2]} cm`;
+    			t9 = space();
+    			li1 = element("li");
+    			li1.textContent = `Altura: ${bottleHeight} cm`;
+    			t13 = space();
+    			li2 = element("li");
+    			li2.textContent = `Cilindro: ${cylinderHeight} cm`;
+    			t17 = space();
+    			li3 = element("li");
+    			li3.textContent = `Volume: ${litrify(/*cokeBottleVolume*/ ctx[5]())} L`;
+    			t21 = space();
+    			h21 = element("h2");
+    			h21.textContent = "Informações do Conjunto";
+    			t23 = space();
+    			ul1 = element("ul");
+    			li4 = element("li");
+    			li4.textContent = `Média: ${/*heights*/ ctx[1].mean.toFixed(2)} cm`;
+    			t27 = space();
+    			li5 = element("li");
+    			li5.textContent = `Mediana: ${/*heights*/ ctx[1].median.toFixed(2)} cm`;
+    			t31 = space();
+    			li6 = element("li");
+    			li6.textContent = `Desvio Médio: ${/*heights*/ ctx[1].avarageAbsoluteDeviation.toFixed(2)}`;
+    			t34 = space();
+    			li7 = element("li");
+    			li7.textContent = `Desvio Padrão: ${/*heights*/ ctx[1].standardDeviation.toFixed(2)}`;
+    			t37 = space();
+    			h22 = element("h2");
+    			h22.textContent = "Informações dos Lacres";
+    			t39 = space();
+    			ul2 = element("ul");
+    			li8 = element("li");
+    			li8.textContent = `Total de Garrafas: ${/*heights*/ ctx[1].length} units ( ${litrify(/*totalVolume*/ ctx[3])} L )`;
+    			t45 = space();
+    			li9 = element("li");
+    			li9.textContent = `Volume Ocupado: ${litrify(/*usedVolume*/ ctx[4])} L`;
+    			t49 = space();
+    			li10 = element("li");
+    			li10.textContent = `Garrafas Equivalentes: ${(/*usedVolume*/ ctx[4] / 2000).toFixed(1)} units`; /** cokeBottleVolume() */
+    			t53 = space();
+    			table_1 = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "ID";
+    			t55 = space();
+    			th1 = element("th");
+    			th1.textContent = "Altura";
+    			t57 = space();
+    			th2 = element("th");
+    			th2.textContent = "Caixa";
+    			t59 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h1, file, 50, 0, 1334);
+    			add_location(p, file, 51, 0, 1353);
+    			add_location(h20, file, 52, 0, 1409);
+    			add_location(li0, file, 54, 4, 1439);
+    			add_location(li1, file, 55, 4, 1480);
+    			add_location(li2, file, 56, 4, 1522);
+    			add_location(li3, file, 57, 4, 1568);
+    			add_location(ul0, file, 53, 0, 1429);
+    			add_location(h21, file, 59, 0, 1627);
+    			add_location(li4, file, 61, 4, 1671);
+    			add_location(li5, file, 62, 4, 1723);
+    			add_location(li6, file, 63, 4, 1780);
+    			add_location(li7, file, 64, 4, 1856);
+    			add_location(ul1, file, 60, 0, 1661);
+    			add_location(h22, file, 66, 0, 1929);
+    			add_location(li8, file, 68, 4, 1972);
+    			add_location(li9, file, 69, 4, 2060);
+    			add_location(li10, file, 70, 4, 2116);
+    			add_location(ul2, file, 67, 0, 1962);
+    			attr_dev(th0, "class", "svelte-15zvcps");
+    			add_location(th0, file, 75, 8, 2256);
+    			attr_dev(th1, "class", "svelte-15zvcps");
+    			add_location(th1, file, 76, 2, 2271);
+    			attr_dev(th2, "class", "svelte-15zvcps");
+    			add_location(th2, file, 77, 2, 2290);
+    			add_location(tr, file, 74, 4, 2242);
+    			attr_dev(table_1, "class", "svelte-15zvcps");
+    			add_location(table_1, file, 73, 0, 2229);
+    			add_location(div, file, 49, 0, 1327);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t1);
+    			append_dev(div, p);
+    			append_dev(div, t3);
+    			append_dev(div, h20);
+    			append_dev(div, t5);
+    			append_dev(div, ul0);
+    			append_dev(ul0, li0);
+    			append_dev(ul0, t9);
+    			append_dev(ul0, li1);
+    			append_dev(ul0, t13);
+    			append_dev(ul0, li2);
+    			append_dev(ul0, t17);
+    			append_dev(ul0, li3);
+    			append_dev(div, t21);
+    			append_dev(div, h21);
+    			append_dev(div, t23);
+    			append_dev(div, ul1);
+    			append_dev(ul1, li4);
+    			append_dev(ul1, t27);
+    			append_dev(ul1, li5);
+    			append_dev(ul1, t31);
+    			append_dev(ul1, li6);
+    			append_dev(ul1, t34);
+    			append_dev(ul1, li7);
+    			append_dev(div, t37);
+    			append_dev(div, h22);
+    			append_dev(div, t39);
+    			append_dev(div, ul2);
+    			append_dev(ul2, li8);
+    			append_dev(ul2, t45);
+    			append_dev(ul2, li9);
+    			append_dev(ul2, t49);
+    			append_dev(ul2, li10);
+    			append_dev(div, t53);
+    			append_dev(div, table_1);
+    			append_dev(table_1, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t55);
+    			append_dev(tr, th1);
+    			append_dev(tr, t57);
+    			append_dev(tr, th2);
+    			append_dev(table_1, t59);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table_1, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*dynamic*/ 1) {
+    				each_value = /*dynamic*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table_1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const bottleHeight = 34.34;
+    const cylinderHeight = 22.5;
+
+    function calculateCylinderVolume(radius, height) {
+    	return Math.PI * radius ** 2 * height;
+    }
+
+    function calculateConeVolume(radius, height) {
+    	return calculateCylinderVolume(radius, height) / 3;
+    }
+
+    function litrify(n) {
+    	return (Number(n) / 1000).toFixed(1);
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Bottles', slots, []);
+    	let table;
+    	let dynamic;
+
+    	bottles.subscribe(data => {
+    		table = $$invalidate(0, dynamic = data);
+    	});
+
+    	let heights = new Population(...table.map(bottle => Number(bottle.height)));
+    	const bottleRadius = 10.4 / 2;
+    	let totalVolume = cokeBottleVolume() * heights.length;
+    	let usedVolume = heights.map(cokeSampleVolume).reduce((a, b) => a + b);
+
+    	function cokeSampleVolume(height) {
+    		return calculateCylinderVolume(bottleRadius, height);
+    	}
+
+    	function cokeBottleVolume() {
+    		let cylinder = calculateCylinderVolume(bottleRadius, cylinderHeight);
+    		let cone = calculateConeVolume(bottleRadius, bottleHeight - cylinderHeight);
+    		return cylinder + cone;
+    	}
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Bottles> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		bottles,
+    		Population,
+    		table,
+    		dynamic,
+    		heights,
+    		bottleHeight,
+    		bottleRadius,
+    		cylinderHeight,
+    		totalVolume,
+    		usedVolume,
+    		cokeSampleVolume,
+    		cokeBottleVolume,
+    		calculateCylinderVolume,
+    		calculateConeVolume,
+    		litrify
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('table' in $$props) table = $$props.table;
+    		if ('dynamic' in $$props) $$invalidate(0, dynamic = $$props.dynamic);
+    		if ('heights' in $$props) $$invalidate(1, heights = $$props.heights);
+    		if ('totalVolume' in $$props) $$invalidate(3, totalVolume = $$props.totalVolume);
+    		if ('usedVolume' in $$props) $$invalidate(4, usedVolume = $$props.usedVolume);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [dynamic, heights, bottleRadius, totalVolume, usedVolume, cokeBottleVolume];
+    }
+
+    class Bottles extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Bottles",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.50.1 */
+
+    function create_fragment(ctx) {
+    	let price;
+    	let t0;
+    	let expenses;
+    	let t1;
+    	let overdebt;
+    	let t2;
+    	let cfc;
+    	let t3;
+    	let bottles;
+    	let current;
+    	price = new Price({ $$inline: true });
+    	expenses = new Expenses({ $$inline: true });
+    	overdebt = new Overdebt({ $$inline: true });
+    	cfc = new CFC({ $$inline: true });
+    	bottles = new Bottles({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(price.$$.fragment);
+    			t0 = space();
+    			create_component(expenses.$$.fragment);
+    			t1 = space();
+    			create_component(overdebt.$$.fragment);
+    			t2 = space();
+    			create_component(cfc.$$.fragment);
+    			t3 = space();
+    			create_component(bottles.$$.fragment);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(price, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(expenses, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(overdebt, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(cfc, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			mount_component(bottles, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(price.$$.fragment, local);
+    			transition_in(expenses.$$.fragment, local);
+    			transition_in(overdebt.$$.fragment, local);
+    			transition_in(cfc.$$.fragment, local);
+    			transition_in(bottles.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(price.$$.fragment, local);
+    			transition_out(expenses.$$.fragment, local);
+    			transition_out(overdebt.$$.fragment, local);
+    			transition_out(cfc.$$.fragment, local);
+    			transition_out(bottles.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(price, detaching);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(expenses, detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(overdebt, detaching);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(cfc, detaching);
+    			if (detaching) detach_dev(t3);
+    			destroy_component(bottles, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ Price, Expenses, CFC, Overdebt, Bottles });
+    	return [];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    var app = new App({
+    	target: document.body
+    });
+
+    // npm i 
+    // npm run dev -- Starts the live reload
+    // npm run deploy
+
+    return app;
+
+})();
 //# sourceMappingURL=bundle.js.map
