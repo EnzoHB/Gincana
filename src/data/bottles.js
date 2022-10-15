@@ -5,7 +5,7 @@ const data = [
     { id: '02', height: 22, box: 1 },
     { id: '03', height: 22.5, box: 1 },
     { id: '04', height: 24, box: 1 },
-    { id: '05', height: 24, box: 1 },
+    { id: '05', height: 20, box: 1 },
     { id: '06', height: 21, box: 1 },
     { id: '07', height: 20.5, box: 1 },
     { id: '08', height: 24, box: 1 },
@@ -60,7 +60,8 @@ const data = [
     { id: '39', height: 22.5, box: 7 },
     { id: '3a', height: 21.5, box: 7 },
     { id: '3b', height: 22.5, box: 7 },
-    { id: '3c', height: 22.5, box: 7 }
+    { id: '3c', height: 22.5, box: 7 },
+    { id: '3d', height: 23, box: 7 }
 ]
 
 export const bottles = writable(data);

@@ -5,6 +5,7 @@
     import CFC from "./components/CFC.svelte";
     import Overdebt from './components/Overdebt.svelte';
     import Bottles from "./components/Bottles.svelte";
+    import Predictions from "./components/Predictions/Prediction.svelte";
 
 </script>
 
@@ -13,3 +14,4 @@
 <Overdebt/>
 <CFC/>
 <Bottles/>
+<Predictions/>

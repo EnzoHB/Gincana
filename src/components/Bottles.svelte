@@ -74,12 +74,14 @@
 <table>
     <tr>
         <th>ID</th>
+        <th>Code</th>
 		<th>Altura</th>
 		<th>Caixa</th>
 	</tr>
     {#each dynamic as { id, height, box }}
         <tr>
             <td>{id}</td>
+            <td>{(height * 10).toString(16)}</td>
             <td>{height} cm</td>
             <td>{box}</td>
         </tr>
